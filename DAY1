@@ -1,0 +1,55 @@
+const restaurant = {
+    name: 'Classico Italiano',
+    location: 'Via Angelo Tavanti 23, Firenze, Italy',
+    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+    order: function (start, end) {
+        return [this.starterMenu[start], this.mainMenu[end]];
+    },
+
+    openingHours: {
+        thu: {
+            open: 12,
+            close: 22,
+        },
+        fri: {
+            open: 11,
+            close: 23,
+        },
+        sat: {
+            open: 0, // Open 24 hours
+            close: 24,
+        },
+    },
+    orderDelivery: function ({ start, end, address, time }) {
+        console.log(`Order received!! You ordered ${this.starterMenu[start]} and ${this.mainMenu[end]} and it will be delivered at ${address} exactly at ${time}`);
+    },
+};
+
+//having function inside object inside eobject
+restaurant.orderDelivery({
+    time: '10:20',
+    address: 'Chennai',
+    start: 0,
+    end: 2,
+});
+//simple destructuring array
+const arr = [10, 20, 30];
+const [a, b, c] = arr;
+
+
+//destructuring objects
+const { location:as } = restaurant;
+console.log(as);
+let num1 = 20;
+let num2 = 30;
+let num3 = 98;
+const array = { num1: 2, num2: 100, num3};
+
+({ num1, num2 } = array);
+console.log(array);
+
+const { name, openingHours } = restaurant;
+const { fri:{open,close} } = openingHours;
+console.log(open,close);
