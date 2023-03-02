@@ -1,0 +1,42 @@
+const arr = [1, 2, 3];
+const newArr = [9, 8, ...arr];
+console.log(newArr);
+// ... for writing it as individual array
+//creates a new array and stores in it
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Puffed rice'];
+console.log(newMenu);
+console.log(restaurant.mainMenu);
+//copy
+const copyMenu = [...restaurant.mainMenu];
+console.log(copyMenu);
+
+//appending
+const appendArray = [...restaurant.starterMenu,...restaurant.mainMenu];
+console.log(appendArray);
+
+//iterables are arrays, string , map and sets. Not objects
+const letter = 'Harish';
+const separate = [...letter];
+console.log(separate);
+console.log(...letter);
+
+//cannot write in template literal ${}
+
+// const ingredients = [
+//     prompt("Ingredient 1 for pasta"),
+//     prompt("Ingredient 2 for pasta"),
+//     prompt("Ingredient 3 for pasta")
+// ];
+// restaurant.orderPasta(...ingredients);
+
+ //can add additional parameters
+const newRestaurant = { foundedIn: 2000, ...restaurant, founder: "Michael" }
+console.log(newRestaurant);
+
+//copying in a new variable 
+const restaurantnew = { ...restaurant };
+restaurantnew.name = "Peaky blinders";
+console.log(restaurantnew.name);
+console.log(restaurant.name);
