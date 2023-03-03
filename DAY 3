@@ -1,0 +1,59 @@
+//rest pattern lies on left side
+const [num1, num2, ...others] = [1, 2, 3, 4, 5, 6];
+console.log(num1, num2, others);
+
+const [pizza, pasta, ...otherFood] = [...restaurant.mainMenu, restaurant.starterMenu];
+console.log(pizza, pasta, otherFood);
+
+const { sat, ...weekDays } = restaurant.openingHours;
+console.log(sat);
+
+//using functions
+//in spread we expand and in rest pattern we are comprissing
+const add = function (...numbers) {
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++){
+        sum += numbers[i];
+    }
+    console.log(sum);
+}
+add(1, 2, 3);
+add(3, 2, 3, 2, 3, 2, 3);
+
+const x = [12, 3, 5];
+add(...x);
+
+//1st was stored in main argument and others were stored in otherIngredients
+restaurant.orderPizza('Mushroom', 'capsicum', 'onion', 'sauce');
+//spread operator is used to write values and rest is used to have variable names
+
+
+//&& and ||
+//if the first operator is true then no need for right side of operator
+console.log(3 || 9);
+console.log(true || 0);
+console.log(undefined || null);
+console.log('' || 'jonas');
+
+//normal way
+const guest1 = restaurant.location ? restaurant.location : 10;
+console.log(guest1);
+
+//or way
+restaurant.numGuest = 20;
+const guest2 = restaurant.numGuest || 10;
+console.log(guest2);
+
+//and
+//opposite way cause we know the ans will be defenitely wrong
+//wrong value wiill b =e there defenitely
+console.log(0 && 'Jonas');
+console.log(1 && 'Jonas');
+
+console.log('hello' && 20 && null && 'myself');
+
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'sauce');
+
+
+//and- first condition is false then it will return nothing
+//or- if the value is true first will execute otherwise it will not
