@@ -1,0 +1,8 @@
+restaurant.numGuest = 20;
+const guest2 = restaurant.numGuest || 10;
+console.log(guest2);
+
+//NULLISH OPERATOR
+restaurant.numGuest = 20;
+const newGuest = restaurant.numGuest ?? 10;
+console.log(newGuest);
