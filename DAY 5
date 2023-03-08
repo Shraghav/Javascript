@@ -1,0 +1,25 @@
+const rest1 = {
+    name: 'Gugan',
+    guests: 0
+}
+
+const rest2 = { 
+    name: 'Namo Sivaya',
+    owner: 'Sena Raghav',
+}
+
+// rest1.guests = rest1.guests || 10;
+// rest2.guests = rest2.guests || 10;
+// rest1.guests ||= 10;
+// rest2.guests ||= 10;
+
+//nullish operator
+rest1.guests ??= 10;
+rest2.guests ??= 10;
+
+// rest2.owner = rest2.owner && 'no one';
+// rest1.owner = rest1.owner && 'no one';//false values will be return first
+
+rest1.owner &&='Kumar'; //here it is not printing kumar because the value is actually false 
+rest2.owner &&='Kumar'; //here it is printing kumar because the value is true
+console.log(rest1, rest2);
