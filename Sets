@@ -1,0 +1,31 @@
+const a = new Set([
+    'Books',
+    'Books',
+    'Toys',
+    'Laptop',
+    'Mouse',
+    'Mouse',
+    'Toys',
+    'Coffee'
+])
+console.log(a);
+console.log(a.size);
+console.log(a.has('Mouse'));
+
+console.log(new Set('Harish'));
+console.log(a.add('Notes'));//cannot specify the size as theye are unordered
+// console.log(a.clear);
+
+for (const order of a) {
+    console.log(order)
+}
+
+//example
+const worker = ['Waiter', 'Chef', 'Manager', 'Watchman', 'Chef', 'Waiter', 'Waiter'];
+const UniqueWorker = [...new Set(worker)]; //changing set to array
+console.log(worker);
+console.log(UniqueWorker);
+console.log(UniqueWorker.size);//works only with sets here since we converted this to array it will show undefined
+
+const string = new Set('Harish').size;
+console.log(string);
